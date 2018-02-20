@@ -10,7 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 
 class Employee {
-	// declaring the instance
+	// declaring the fields
 	private String name;
 	private int id;
 
@@ -21,12 +21,17 @@ class Employee {
 	}
 
 	public Employee(int id) {
-		this.id = id;
+	this.id = id;
 
 	}
-
 	public Employee(String name) {
 		this.name = name;
+	}
+	
+	public Employee(int id,String name)
+	{
+		this.name=name;
+		this.id=id;
 	}
 
 	public void show() {
@@ -41,8 +46,10 @@ public class TestConstructorInjection {
 		// BeanFactory factory=new XmlBeanFactory(r);
 
 		ApplicationContext context = new FileSystemXmlApplicationContext("/resource/applicationContext.xml");
-		Employee emp = (Employee) context.getBean("emp");
+	
+		Employee emp = (Employee)context.getBean("emp");
 		emp.show();
+		
 
 	}
 }
