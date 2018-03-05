@@ -20,13 +20,27 @@
 		<constructor-arg value="India" name="country"></constructor-arg>
 	</bean>
 
+	<!-- bean creation for Employee1 [TestConstructorInjectionWithDO] -->
 	<bean id="emp1" class="com.mks.springdi.Employee1">
 		<constructor-arg value="10" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Manoj" name="name" type="java.lang.String"></constructor-arg>
 		<constructor-arg>
-		<ref bean="address"/>
+			<ref bean="address" />
 		</constructor-arg>
 	</bean>
 
+	<!-- bean creation for Question [TestConstructorInjectionWithCollection] -->
+	<bean id="answerlist" class="com.mks.springdi.Question">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="What is Java ?" type="java.lang.String"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>It's a programming language</value>
+				<value>It's a platform</value>
+				<value>It is a island</value>
+			</list>
 
+		</constructor-arg>
+
+	</bean>
 </beans>
