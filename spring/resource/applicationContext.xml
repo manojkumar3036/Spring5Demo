@@ -43,4 +43,28 @@
 		</constructor-arg>
 
 	</bean>
+	<!-- bean creation fir Question1 [TestCIWithCollectionDO] -->
+	<bean id="question1" class="com.mks.springdi.Question1">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="What is java?" type="java.lang.String"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="ans1" />
+				<ref bean="ans2" />
+			</list>
+		</constructor-arg>
+
+	</bean>
+	<!-- bean creation for Answer [TestCIWithCollectionDO] -->
+	<bean id="ans1" class="com.mks.springdi.Answer">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="It's a programming language"
+			type="java.lang.String"></constructor-arg>
+		<constructor-arg value="Rakesh" type="java.lang.String"></constructor-arg>
+	</bean>
+	<bean id="ans2" class="com.mks.springdi.Answer">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="It's a platform" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="Saswat" type="java.lang.String"></constructor-arg>
+	</bean>
 </beans>
