@@ -5,13 +5,28 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="emp" class="com.mks.springdi.Employee">
-	<constructor-arg type="int" name="id">
-		<value>10</value>
-	</constructor-arg>
-	
-	<constructor-arg type="java.lang.String" name="name"> 
-		<value>Manoj</value>
-	</constructor-arg>
+		<constructor-arg type="int" name="id">
+			<value>10</value>
+		</constructor-arg>
 
+		<constructor-arg type="java.lang.String" name="name">
+			<value>Manoj</value>
+		</constructor-arg>
 	</bean>
+
+	<bean id="address" class="com.mks.springdi.Address">
+		<constructor-arg value="Bangalore" name="city"></constructor-arg>
+		<constructor-arg value="Karnataka" name="state"></constructor-arg>
+		<constructor-arg value="India" name="country"></constructor-arg>
+	</bean>
+
+	<bean id="emp1" class="com.mks.springdi.Employee1">
+		<constructor-arg value="10" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Manoj" name="name" type="java.lang.String"></constructor-arg>
+		<constructor-arg>
+		<ref bean="address"/>
+		</constructor-arg>
+	</bean>
+
+
 </beans>
